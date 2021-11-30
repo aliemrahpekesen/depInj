@@ -1,18 +1,17 @@
 package com.aep.training.depinj.controller;
 
-import com.aep.training.depinj.service.impl.PrinterOutputServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 class SetterInjectedOutputControllerTest {
 
+    @Autowired
     SetterInjectedOutputController controller;
-
-    @BeforeEach
-    void setUp() {
-        controller= new SetterInjectedOutputController();
-        controller.setOutputService(new PrinterOutputServiceImpl());
-    }
 
     @Test
     void doOutput() {
